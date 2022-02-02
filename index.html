@@ -6,8 +6,25 @@
     <title>replit</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
-  <body>
-    <script src="script.js"></script>
+  
+  <body>     
+      <div id="myModal" class="modal">
+
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p>Laat Uw gegevens hier achter om u in te schrijven:</p>
+
+          <label for="fname">Voornaam:</label><br>
+          <input type="text" id="fname" name="fname"><br>
+          <label for="lname">Achternaam:</label><br>
+          <input type="text" id="lname" name="lname"><br>
+          <label for="post">Postcode:</label><br>
+          <input type="text" id="post" name="post"><br><br>
+
+          <input onclick="myFunction()" type="submit" value="Verstuur">
+        </div>
+
+      </div>
 
       <img id="imghrlm" src="https://haarlem.incijfers.nl/dashboard/MasterPage/css/images/logo-haarlem.png">
 
@@ -19,10 +36,34 @@
 
       <img id="pic3" src="https://www.optisport.nl/sites/default/files/images/Activiteiten/Zwemmen/AquaVitaal/Aqua_Vitaal.jpg">
 
-      <a href=""><p id="sportpas">Vraag HIER uw Sportpas aan</p></a>
+      <a id="myBtn"><p id="sportpas">Vraag HIER uw Sportpas aan</p></a>
 
       <p id="sportenisgoed">Deze Sportpas kunt u gratis aanvragen voor een Gezonder Haarlem-Noord!<br><br>De Sportpas voor volwassenen is mogelijk gemaakt door Rover & Daniel die met het briljante idee kwamen om een sportpas voor volwassenen te maken. Hierdoor kunt u gratis sporten uitproberen.</p>
 
       <p id="footer">Gemaakt Door Rover Voor Maatschappijleer</p>
+
+      <script>
+          var modal = document.getElementById("myModal");
+
+          var btn = document.getElementById("myBtn");
+
+          var span = document.getElementsByClassName("close")[0];
+          btn.onclick = function() {
+            modal.style.display = "block";
+          }
+          span.onclick = function() {
+            modal.style.display = "none";
+          }
+          window.onclick = function(event) {
+            if (event.target == modal) {
+              modal.style.display = "none";
+            }
+          }
+
+          function myFunction() {
+            alert("Verzoek Succesvol ontvangen, we zullen een kijkje nemen 😉");
+          }
+      </script>
+
   </body>
 </html>
